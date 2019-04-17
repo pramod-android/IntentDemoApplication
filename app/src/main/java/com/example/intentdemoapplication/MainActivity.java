@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText edtText;
     Button btnRedirect;
+    String userInput;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,12 +21,11 @@ public class MainActivity extends AppCompatActivity {
         btnRedirect=(Button)findViewById(R.id.button);
 
 
+
         btnRedirect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String userInput=edtText.getText().toString();
-
-
+                userInput=edtText.getText().toString();
                 Intent secActvityIntent=new Intent(MainActivity.this,SecActivity.class);
                 secActvityIntent.putExtra("value",userInput);
                 startActivity(secActvityIntent);
